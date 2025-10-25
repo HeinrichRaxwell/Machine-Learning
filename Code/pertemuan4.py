@@ -1,4 +1,4 @@
-  # DATA PREPARATION - PERTEMUAN 4 (versi aman)
+  # DATA PREPARATION - PERTEMUAN 4
 import os
 import pandas as pd
 import seaborn as sns
@@ -15,7 +15,7 @@ print(df.head())
 print(df.isnull().sum())
 df = df.drop_duplicates()
 
-# 2) EDA (simpan supaya bisa dimasukin ke laporan)
+# 2) EDA
 plt.figure(); sns.boxplot(x=df['IPK']); plt.title("Boxplot IPK")
 plt.tight_layout(); plt.savefig("p4_boxplot_ipk.png", dpi=120); plt.close()
 
@@ -42,12 +42,12 @@ print("processed_kelulusan.csv tersimpan")
 X = df.drop('Lulus', axis=1)
 y = df['Lulus']
 
-# stratify SEKALI (agar aman di data kecil)
+# stratify SEKALI
 X_train, X_temp, y_train, y_temp = train_test_split(
     X, y, test_size=0.3, stratify=y, random_state=42
 )
 
-# split kedua TANPA stratify (menghindari error kelas = 1 anggota)
+# split kedua TANPA stratify 
 X_val, X_test, y_val, y_test = train_test_split(
     X_temp, y_temp, test_size=0.5, random_state=42
 )

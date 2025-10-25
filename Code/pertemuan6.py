@@ -60,7 +60,7 @@ y_val_pred = pipe.predict(X_val)
 print("\nBaseline RF — F1(val):", f1_score(y_val, y_val_pred, average="macro"))
 print(classification_report(y_val, y_val_pred, digits=3))
 
-# ---------- Langkah 3 — Validasi Silang (pakai 2-fold biar aman) ----------
+# ---------- Langkah 3 — Validasi Silang (pakai 2-fold) ----------
 skf = StratifiedKFold(n_splits=2, shuffle=True, random_state=42)
 scores = cross_val_score(pipe, X_train, y_train, cv=skf, scoring="f1_macro", n_jobs=-1)
 print("CV F1-macro (train):", scores.mean(), "±", scores.std())
@@ -79,7 +79,7 @@ y_val_best = best_model.predict(X_val)
 print("Best RF — F1(val):", f1_score(y_val, y_val_best, average="macro"))
 
 # ---------- Langkah 5 — Evaluasi Akhir (Test Set) ----------
-final_model = best_model  # kalau baseline lebih baik, ganti ke pipe
+final_model = best_model
 y_test_pred = final_model.predict(X_test)
 
 print("\n=== TEST EVALUATION ===")
@@ -128,7 +128,7 @@ if hasattr(final_model, "predict_proba"):
 else:
     print("Model tidak punya predict_proba → ROC/PR di-skip.")
 
-# ---------- Langkah 6 — Pentingnya Fitur ----------
+# ---------- Langkah 6 — Feature Importance ----------
 try:
     importances = final_model.named_steps["clf"].feature_importances_
     fn = final_model.named_steps["pre"].get_feature_names_out()
