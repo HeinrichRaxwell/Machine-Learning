@@ -1,9 +1,9 @@
-🎓 Prediksi Kelulusan Mahasiswa — Machine Learning Project (Unpam)
+# 🎓 Prediksi Kelulusan Mahasiswa — Machine Learning Project (Unpam)
 Proyek ini berisi serangkaian latihan praktikum mata kuliah Machine Learning di Universitas Pamulang (UNPAM), berfokus pada pembuatan model prediksi kelulusan mahasiswa berdasarkan data akademik seperti IPK, kehadiran, dan waktu belajar.
 Setiap pertemuan merepresentasikan tahapan berbeda dalam pipeline Machine Learning — dari data preparation, modeling, hingga neural network.
 
-🧩 Struktur Folder
-📂 ML_Kelulusan/
+# 🧩 Struktur Folder
+# 📂 ML_Kelulusan/
 ├── kelulusan_mahasiswa.csv        # dataset mentah
 ├── processed_kelulusan.csv        # hasil pembersihan + feature engineering
 │
@@ -26,15 +26,15 @@ Setiap pertemuan merepresentasikan tahapan berbeda dalam pipeline Machine Learni
 ├── scaler_p7.pkl                  # scaler untuk preprocessing ANN
 └── README.md
 
-🧠 Tahapan Tiap Pertemuan
-📘 Pertemuan 4 — Data Preparation
-    - Membersihkan data dari missing value & duplikasi.
-    - Eksplorasi data (EDA): boxplot, histogram, scatter plot, heatmap korelasi.
-    - Feature engineering:
-      - Rasio_Absensi = Jumlah_Absensi / 14
-      - IPK_x_Study = IPK * Waktu_Belajar_Jam
-    - Split data → 70 % train | 15 % val | 15 % test
-    - Hasil: processed_kelulusan.csv
+# 🧠 Tahapan Tiap Pertemuan
+# 📘 Pertemuan 4 — Data Preparation
+- Membersihkan data dari missing value & duplikasi.
+- Eksplorasi data (EDA): boxplot, histogram, scatter plot, heatmap korelasi.
+- Feature engineering:
+  - Rasio_Absensi = Jumlah_Absensi / 14
+  - IPK_x_Study = IPK * Waktu_Belajar_Jam
+- Split data → 70 % train | 15 % val | 15 % test
+- Hasil: processed_kelulusan.csv
 
 📗 Pertemuan 5 — Modeling (Baseline vs Random Forest)
     - Baseline: Logistic Regression dengan pipeline preprocessing.
