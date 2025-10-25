@@ -128,7 +128,7 @@ if hasattr(final_model, "predict_proba"):
 else:
     print("Model tidak punya predict_proba → ROC/PR di-skip.")
 
-# ---------- Langkah 6 — Pentingnya Fitur ----------
+# ---------- Langkah 6 — Feature Importance ----------
 try:
     importances = final_model.named_steps["clf"].feature_importances_
     fn = final_model.named_steps["pre"].get_feature_names_out()
