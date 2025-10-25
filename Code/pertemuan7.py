@@ -21,7 +21,7 @@ random.seed(SEED)
 np.random.seed(SEED)
 tf.random.set_seed(SEED)
 
-# ---------- Langkah 1 — Load & Split (tanpa leakage) ----------
+# ---------- Langkah 1 — Load & Split ----------
 assert os.path.exists("processed_kelulusan.csv"), "Taruh processed_kelulusan.csv di folder ini."
 df = pd.read_csv("processed_kelulusan.csv")
 
@@ -50,7 +50,7 @@ print("Label count — train:\n", y_train.value_counts())
 print("Label count — val:\n",   y_val.value_counts())
 print("Label count — test:\n",  y_test.value_counts())
 
-# ---------- Standardize (fit di train saja) ----------
+# ---------- Standardize  ----------
 scaler = StandardScaler()
 X_train_s = scaler.fit_transform(X_train)
 X_val_s   = scaler.transform(X_val)
@@ -99,7 +99,7 @@ print(confusion_matrix(y_test, y_pred_test_050))
 print("\nClassification Report (test, thr=0.5):")
 print(classification_report(y_test, y_pred_test_050, digits=3))
 
-# ---------- (Opsional kuat) Tuning Threshold pakai VAL untuk F1 ----------
+# ---------- (Opsional) Tuning Threshold pakai VAL untuk F1 ----------
 y_proba_val = model.predict(X_val_s).ravel()
 prec, rec, thr = precision_recall_curve(y_val, y_proba_val)
 # F1 = 2PR/(P+R), hindari div0
