@@ -80,7 +80,7 @@ y_val_best = best_rf.predict(X_val)
 print("Best RF F1(val):", f1_score(y_val, y_val_best, average="macro"))
 
 # ---------- Langkah 5: Evaluasi Akhir (TEST) ----------
-# pilih final model: pakai yang terbaik (RF tuned); kalau mau, bandingkan dengan LR
+# final model: pakai yang terbaik (RF tuned)
 final_model = best_rf
 
 y_test_pred = final_model.predict(X_test)
@@ -122,8 +122,3 @@ if hasattr(final_model, "predict_proba"):
     plt.xlabel("FPR"); plt.ylabel("TPR"); plt.title("ROC Curve (test)")
     plt.legend(); plt.tight_layout(); plt.savefig("roc_test_p5.png", dpi=120); plt.close()
     print("Saved: roc_test_p5.png")
-
-# ---------- Langkah 6 (Opsional): Simpan Model ----------
-# import joblib
-# import joblib; joblib.dump(final_model, "model_p5.pkl")
-# print("Model tersimpan ke model_p5.pkl")
