@@ -6,32 +6,6 @@ Setiap pertemuan merepresentasikan tahapan berbeda dalam pipeline Machine Learni
 
 ---
 
-## 🧩 Struktur Folder
-
-ML_Kelulusan/
-├── kelulusan_mahasiswa.csv # dataset mentah
-├── processed_kelulusan.csv # hasil pembersihan + feature engineering
-│
-├── P4_data_preparation.py # Pertemuan 4
-├── P5_modeling.py # Pertemuan 5
-├── P6_random_forest.py # Pertemuan 6
-├── P7_ann.py # Pertemuan 7
-│
-├── cm_test_p6.png # confusion matrix (P6)
-├── roc_test_p6.png # ROC curve (P6)
-├── pr_test_p6.png # precision-recall (P6)
-├── learning_curve_p7.png # loss curve (P7)
-├── roc_ann_p7.png # ROC curve (P7)
-├── pr_ann_p7.png # precision-recall (P7)
-│
-├── rf_model.pkl # model RandomForest tersimpan
-├── ann_p7.h5 # model ANN tersimpan
-├── scaler_p7.pkl # scaler untuk preprocessing ANN
-└── README.md
-
-
----
-
 ## 📘 Tahapan Tiap Pertemuan
 
 ### **Pertemuan 4 — Data Preparation**
@@ -74,7 +48,7 @@ ML_Kelulusan/
    python P6_random_forest.py
 3. Semua grafik & model akan tersimpan otomatis.
 
-💾 Requirements
+## 💾 Requirements : 
 pandas
 numpy
 matplotlib
